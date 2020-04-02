@@ -2,23 +2,23 @@ package legoset;
 
 import lombok.Data;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 @Data
 public class Weight {
-
-    private String value;
-
+    @XmlValue
     private double weight;
+
+    @XmlAttribute
+    private String unit;
 
 
     public Weight() {}
 
-    public Weight(String value,double weight) {
-        this.value = value;
+    public Weight(double weight, String unit) {
         this.weight = weight;
-
+        this.unit = unit;
     }
 
 }

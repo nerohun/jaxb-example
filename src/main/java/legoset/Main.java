@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Set;
+
+
 import jaxb.JAXBHelper;
 
 
@@ -13,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         LegoSet legoset = new LegoSet();
-
+        Weight weight = new Weight();
         legoset.setNumber("75211");
         legoset.setName("Imperial TIE Fighter");
         legoset.setTheme("Star Wars");
@@ -25,10 +27,14 @@ public class Main {
         ArrayList<Minifig> minifigs = new ArrayList<>();
         minifigs.add(new Minifig("Imperial Mudtrooper",2));
         minifigs.add(new Minifig("Imperial Pilot", 1));
-        minifigs.add(new Minifig("Imperial Mudtrooper", 1));
+        minifigs.add(new Minifig("Mimban Stormtrooper", 1));
 
         legoset.setMinifigs(minifigs);
 
+        ArrayList<Weight> weights = new ArrayList<>();
+        weights.add(new Weight(0.89,"kg"));
+
+        legoset.setWeight(weights);
 
 
 
